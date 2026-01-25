@@ -15,8 +15,9 @@ if initialize_session "netcarbonzero"; then
   #split_h 30
   tmux split-window -t "$session:$window.0" -h -p 30
   run_cmd "cd $projectroot/App/backend/netcarbonzero-api && mise x -- bash -c 'dotnet run'"
-#  tmux split-window -t "$session:$window.1" -v -p 70
-#  run_cmd "ssh -L 54321:eudr.db.dev.lynker.ai:5432 ubuntu@eudr.airflow.dev.lynker.ai -i ~/.ssh/eudr_engine_private_key_dev"
+  tmux split-window -t "$session:$window.1" -v -p 10
+  #run_cmd "docker run --name dev-netcarbonzero-postgis -p 5432:5432 -e POSTGRES_PASSWORD=postgis -d postgis/postgis"
+  run_cmd "docker start dev-netcarbonzero-postgis"
 #  tmux split-window -t "$session:$window.1" -v -p 50 #-c $(pwd)
 #  run_cmd "ssh -L 54322:eudr.db.lynker.ai:5432 ubuntu@eudr.proxy.lynker.ai -i ~/.ssh/eudr_engine_private_key_prod"
   
@@ -24,6 +25,7 @@ if initialize_session "netcarbonzero"; then
   select_window 0
   select_pane 0
   run_cmd "cd $projectroot/App/backend; vim ."
+  #run_cmd "cd $projectroot/App/backend/ && mise x -- bash -c 'nvim .'"
   #run_cmd "echo 0/0; pwd"
 
   new_window "frontend"
