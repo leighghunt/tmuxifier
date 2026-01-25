@@ -5,6 +5,7 @@
 #window_root "~/dev/eudr_c113_p224/"
 
 projectroot="~/dev/energytransition_c18_p20/"
+session_root "$projectroot"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.

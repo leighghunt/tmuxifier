@@ -5,12 +5,14 @@
 #window_root "~/dev/eudr_c113_p224/"
 
 projectroot="~/dev/netcarbonzero_c1_p31"
+session_root $projectroot
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
 if initialize_session "netcarbonzero"; then
 
   # Create a new window inline within session layout definition.
+  #window_root "~/dev/netcarbonzero_c1_p31/App/backend/"
   new_window "backend"
   #split_h 30
   tmux split-window -t "$session:$window.0" -h -p 30
@@ -28,6 +30,7 @@ if initialize_session "netcarbonzero"; then
   #run_cmd "cd $projectroot/App/backend/ && mise x -- bash -c 'nvim .'"
   #run_cmd "echo 0/0; pwd"
 
+  #window_root "~/dev/netcarbonzero_c1_p31/App/frontend/netcarbonzero/"
   new_window "frontend"
   split_h 30
   #run_cmd "cd $projecttoor/App/frontend/ReactWeb/ && npm run dev"
