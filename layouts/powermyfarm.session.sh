@@ -33,8 +33,7 @@ if initialize_session "powermyfarm"; then
   #run_cmd "cd $projecttoor/App/frontend/ReactWeb/ && npm run dev"
   run_cmd "cd $projectroot/App/frontend/ && mise x -- bash -c 'npm run dev'"
 
-  select_window 0
-  select_pane 0
+  select_pane 1
   run_cmd "cd $projectroot/App/frontend/ && mise x -- bash -c 'nvim .'"
 
 fi
