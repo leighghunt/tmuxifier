@@ -41,6 +41,16 @@ if initialize_session "eudr"; then
   #run_cmd "cd $projectroot/App/frontend/ReactWeb/ && vim ."
   run_cmd "cd $projectroot/App/frontend/ReactWeb/ && mise x -- bash -c 'nvim .'"
 
+  new_window "infra"
+  split_h 30
+  #run_cmd "cd $projecttoor/App/frontend/ReactWeb/ && npm run dev"
+  run_cmd "cd $projectroot/App/infra/ && mise x -- bash -c './check_AWS_sessions.sh ; terraform plan'"
+
+  select_window 3
+  select_pane 1
+  #run_cmd "cd $projectroot/App/frontend/ReactWeb/ && vim ."
+  run_cmd "cd $projectroot/App/infra/ && mise x -- bash -c 'nvim .'"
+
   select_window 1
   select_pane 1
 fi
